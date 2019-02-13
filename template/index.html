@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+        <meta charset="utf-8">
+        <title>LocaFox</title>
+
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
+        <link rel="stylesheet" href="../css/style.css"/>
+        <link href="../lib/zoombox/zoombox.css" rel="stylesheet" type="text/css" media="screen" />
+
+        <script type="text/javascript" src="../lib/node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="../lib/zoombox/zoombox.js"></script>
+        <script type="text/javascript">
+            jQuery(function($){
+                $('a.zoombox').zoombox();
+                $('a.zoombox').zoombox({
+                    theme : 'lightbox',
+                    opacity : 0.6, 
+                    duration : 600, 
+                    animation : true, 
+                    width : 550, 
+                    height : 500, 
+                    gallery : false, 
+                    autoplay : false 
+                    });
+            });
+        </script>
+
+  </head>
+
+  <body>
+
+        <header>
+
+        	<img src="../images/banniere.png">
+            <h1>L o c a F o x</h1>
+            <div id="menubar">
+                <a>Accueil</a>
+                <a class="zoombox" href="societe.html">La société</a>
+                <a class="zoombox" href="agences.html">Nos agences</a>
+                <a class="zoombox" href="indentifier.html">S'identifier</a>
+                <a class="zoombox" href="inscrire.html">S'inscrire</a>
+            </div>
+
+          <div id="slogan">
+              <h2 class="louez">Louez Malin !</h2>
+              <p><em>Location de matériel et d'outillage</em><i>pour professionnels et particuliers</i></p>
+          </div>
+        </header>
+
+  <div id="corps_page">
+    <section id="section1">
+      <p>Choisi une catégorie et sélectionne<br> tout ce dont tu as besoin !</p>
+
+      <ul id="menu-accordeon">
+          <li><a href="#">Confort du Chantier</a>
+            <ul>
+               <li><a href="#">Chauffage et Climatisation</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Travail en Hauteur & Elevation</a>
+            <ul>
+               <li><a href="#">Echaffaudage</a></li>
+               <li><a href="#">Nacelle</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Energie Electrique et Fluides</a>
+            <ul>
+               <li><a href="#">Groupe Electrogène</a></li>
+               <li><a href="#">Traitement de l'air</a></li>
+               <li><a href="#">Compresseur</a></li>
+            </ul>
+      	  </li>
+      	<li><a href="#">Transport & Manutention</a>
+            <ul>
+               <li><a href="#">Véhicules légers</a></li>
+               <li><a href="#">Camion Benne</a></li>
+               <li><a href="#">Elevation de charges</a></li>
+               <li><a href="#">Remorquage</a></li>
+      		     <li><a href="#">Chariot</a></li>
+      		     <li><a href="#">Outils de Manutention</a></li>
+            </ul>
+      	</li>
+      	<li><a href="#">Gros-Oeuvre</a>
+            <ul>
+               <li><a href="#">Production Béton</a></li>
+               <li><a href="#">Pompage</a></li>
+            </ul>
+      	</li>
+      	<li><a href="#">Terrassement</a>
+            <ul>
+               <li><a href="#">Compactage</a></li>
+               <li><a href="#">Terrassement</a></li>
+            </ul>
+      	</li>
+      	<li><a href="#">Espace-Vert</a>
+            <ul>
+               <li><a href="#">Coupe et Broyage</a></li>
+               <li><a href="#">Taille et Entretien</a></li>
+               <li><a href="#">Préparation des sols</a></li>
+            </ul>
+      	</li>
+      	<li><a href="#">Outillage</a>
+            <ul>
+               <li><a href="#">Découpe et Perçage</a></li>
+               <li><a href="#">Ponçage Sols et Murs</a></li>
+               <li><a href="#">Aspiration et Nettoyage</a></li>
+      		     <li><a href="#">Peinture</a></li>
+      		     <li><a href="#">Finition</a></li>
+      		  </ul>
+      	</li>
+      </ul>
+    </section>
+    <section id="section2">
+
+    </section>
+  </div>
+      <footer>
+            <div id="footerbar">
+                <a class="zoombox" href="engagements.html">Nos engagements</a>
+                <a class="zoombox" href="contact.html">Contact</a>
+            </div>
+      </footer>
+
+          <!-- code JS alert site étudiant -->
+              <script>
+                  alert ("Attention! Ce site a été réalisé dans le cadre d'un projet d'étude au CNAM de Lille") ;
+              </script>
+
+  </body>
+
+</html>
