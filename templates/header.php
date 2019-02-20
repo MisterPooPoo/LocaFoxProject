@@ -6,8 +6,8 @@
       <a>Accueil</a>
       <a class="zoombox" href="http://localhost:8000/templates/societe.php">La société</a>
       <a class="zoombox" href="http://localhost:8000/templates/agences.php">Nos agences</a>
-      <a class="zoombox" href="http://localhost:8000/templates/identification.php">S'identifier</a>
-      <a class="zoombox" href="http://localhost:8000/templates/inscription.php">S'inscrire</a>
+      <a class="zoombox" href="http://localhost:8000/templates/identifier.php">S'identifier</a>
+      <a class="zoombox" href="http://localhost:8000/templates/inscrire.php">S'inscrire</a>
   </div>
 
 <div id="slogan">

@@ -17,15 +17,11 @@
         <h1>Inscription</h1>
             <fieldset>
                 <form method="POST" >
-                    <label>Nom</label>
+                    <label>Nom de la Société</label>
                     <input type="text"><br><br>
 
-                    <label>Prénom</label>
+                    <label>Numéro de Siret</label>
                     <input type="text"><br><br>
-
-                    <label>Sexe</label>
-                    <input type="checkbox">Homme
-                    <input type="checkbox">Femme<br><br>
 
                     <label>Adresse e-mail</label>
                     <input type="email"><br><br>
