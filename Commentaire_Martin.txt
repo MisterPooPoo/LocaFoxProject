@@ -1,0 +1,48 @@
+Salut les petits Renards,
+
+Quelques petites infos sur ce que j'ai fait :
+
+->Le dossier a été réorganisé de façon à respecter les demandes de Jade pour le twig:
+
+. Vous trouverez l'index.php et toutes les pages concernant les produits dans le templates.
+
+. Les feuilles css et les images du site et des produits sont dans le dossier public/css.
+
+. Toutes les pages sont désormais en .php et ne peuvent être lancé dans le navigateur
+  qu'après avoir lancé le serveur dans le dossier source (LocaFoxProjet) via la commande :
+  php -S localhost:8000
+  Dans votre navigateur rentré l'adresse http://localhost:8000/templates/index.php et magie!
+
+. Attention, lancé bien le serveur dans le dossier source sinon les chemins de marcheront pas
+  car je les ai rentré en absolue du style href="http://localhost:8000/public/css/style.css".
+  On pourra les remplacer par l'adresse du site lorsqu'il sera en ligne.
+
+. Remarque : Jade pour toi en twig il faudra changer toutes les extensions .php et rentrer
+  l'adresse http://localhost:8000/public/index.php dans le navigateur.
+  Il faut absolument respecter la procédure php - S ci-dessus pour que ça marche.
+
+-> Le site est désormais totalement responsive, j'ai crée un media query afin de
+faire en sorte que les éléments se reorganisent lorsque la résolution est inférieure à 720px.
+Vous pouvez faire le test en ajustant la taille de votre navigateur, les produits s'affichent
+sur 2 colonnes lorsque l'écran est petit et sur 3 colonnes lorsqu'il est grand.
+Quelques élements comme le slogan et le message d'accueil se repositionnent aussi dans le header,
+et le menu s'adapte également ainsi que la police.
+
+-> Concernant l'affichage des pages des SousCat (pages_produits dans le dossier), j'ai simplifié
+le code pour qu'il n'y ai qu'à ajouter des produits sans aucun besoin de laisser de blocs vident.
+Si vous vouyez pas de quoi je parle c'est pas grave, c'est juste que si on veut rajouter
+un produit ça sera beaucoup plus simple.
+
+-> Les zoombox sont aussi en .php.
+
+-> Enfin:
+- Il reste à placer les noms / prix / bouton panier dans les blocs de produits.
+- Faire un effet de grossissement au passage de la souris sur les blocs.
+- Intégrer la page de description des produits (zoombox? ou afficher à la place des produits).
+- Intégrer le slider de Yoan
+
+Merci de votre attention! Hésitez pas si vous avez des questions ou suggestions.
+	
+
+
+

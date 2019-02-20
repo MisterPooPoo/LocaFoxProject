@@ -1,0 +1,233 @@
+html {
+	font-family: 'CarlitoRegular';
+	font-size: 1.2vw;
+}
+
+body{
+	margin: 0;
+}
+
+header {
+	position: relative;
+	width: 100%;
+}
+
+header img{
+	width:100%;
+}
+
+		header h1 {
+			position: absolute;
+			top: 18%;
+			left: 16%;
+			color: white;
+		}
+
+#menubar {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	width: 60%;
+	top: 5%;
+	right: 0%;
+}
+
+		#menubar a {
+			display: block;
+			margin-left: 10%;
+			text-decoration: none;
+			color: white;
+		}
+
+#slogan {
+	position: absolute;
+	top: 35%;
+	left: 20%;
+	width: 20%;
+	color: white;
+}
+
+.accueil {
+	width: 3%;
+}
+
+#message {
+	margin-bottom: 1.5%;
+}
+
+#menu-accordeon {
+	padding-left: 0;
+  	list-style:none;
+  	text-align: center;
+}
+
+#menu-accordeon ul {
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+}
+
+#menu-accordeon li {
+   background-color:#ea3200;
+   margin-bottom:1%;
+}
+
+#menu-accordeon li li {
+   max-height:0;
+   overflow: hidden;
+   transition: all .5s;
+   background:#757575;
+   margin:0
+}
+
+#menu-accordeon a {
+  display:block;
+  text-decoration: none;
+  color: #fff;
+  padding: 4% 0;
+  font-size:0.9em;
+	border-bottom: 1px solid white;
+}
+
+#menu-accordeon ul li a, #menu-accordeon li:hover li a {
+  font-size:0.8em;
+}
+
+mediascreen
+@media all and (max-width: 1024px)
+{
+	#menu-accordeon ul li a, #menu-accordeon li:hover li a {
+	  font-size: 2em;
+	}
+}
+
+#menu-accordeon li:hover {
+   background: #ea3200;
+}
+#menu-accordeon li li:hover {
+   background: #04B404;
+}
+
+#menu-accordeon li:hover li {
+  max-height: 15em;
+}
+
+#section1 {
+	width:30%;
+	display: flex;
+	flex-direction: column;
+}
+
+#section2 {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-left: 7%;
+	margin-bottom: 3%;
+	}
+
+#corps_page {
+	display: flex;
+	flex-direction: row;
+	padding-left: 7%;
+	padding-right: 3%
+}
+
+		#selecteur {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 7%;
+ }
+
+		.select_prod {
+			display: flex;
+			width: 30%;
+		  border: 1px solid #D33E24;
+		  background-color: #EFF0E9;
+			margin-right: 2%;
+			margin-bottom: 7%;
+		 }
+
+		 .image_prod {
+			display: flex;
+			position: relative;
+			top: -15%;
+			left: 3%;
+			width: 60%;
+			height: 80%;
+			border: 1px solid #D33E24;
+		 }
+
+footer {
+ 	background-color: #353535;
+	bottom: 0;
+ }
+
+		 #footerbar {
+		 	display: flex;
+		 	flex-direction: row;
+		 	width: 40%;
+		 	color: white;
+		 }
+
+		 #footerbar a {
+		 	display: block;
+		 	margin-left: 10%;
+		 	text-decoration: none;
+		 	color: white;
+		 }
+
+/****************** MEDIA QUERIES : AFFICHAGE PETIT ECRAN*******************/
+
+@media all and (max-width: 720px){
+
+	header h1 {
+		position: absolute;
+		top: 18%;
+		left: 18%;
+		color: white;
+		font-size: 3em;
+	}
+
+	#menubar {
+		position: absolute;
+		display: flex;
+		flex-direction: row;
+		width: 60%;
+		top: 5%;
+		right: 5%;
+		font-size: 1.2em;
+	}
+
+	#slogan {
+		position: absolute;
+		top: 35%;
+		left: 20%;
+		width: 20%;
+		color: white;
+		font-size: 1.7em;
+	}
+
+	#slogan p {
+		position: relative;
+		right: 100%;
+		font-size: 0.7em;
+		width: 70%;
+	}
+
+	#menu-accordeon  {
+		font-size: 2em;
+	}
+
+	.select_prod {
+		display: flex;
+		width: 40%;
+	  border: 1px solid #D33E24;
+	  background-color: #EFF0E9;
+		margin-right: 2%;
+		margin-bottom: 7%;
+	 }
+
+}
