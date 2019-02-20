@@ -16,10 +16,10 @@
     <body>
         <div>
             <section>
-                <a href="inscrirepart.html">Particulier</a>
+                <a href="inscrirepart.php">Particulier</a>
             </section>
             <section>
-                <a href="inscrirepro.html">Professionel</a>
+                <a href="inscrirepro.php">Professionel</a>
             </section>
        </div>
     </body>

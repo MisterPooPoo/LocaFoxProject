@@ -5,7 +5,7 @@
         <title>La societe</title>
 
         <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
-        <link rel="stylesheet" href="http://localhost:8000/public/css/stylepopup.css"/>
+        <link rel="stylesheet" href="../css/stylepopup.css"/>
     </head>
 
     <body>
@@ -23,5 +23,5 @@
 
         </div>
     </body>
-
+        
 </html>
