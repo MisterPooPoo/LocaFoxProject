@@ -7,18 +7,12 @@
 
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
     <link rel="stylesheet" href="http://localhost:8000/public/css/style.css"/>
-    <link rel="stylesheet" href="http://localhost:8000/public/css/styleproduit.css"/>
-    <link rel="stylesheet" href="../css/stylepopup.css"/>
-
-    <!-- Lien vers bootstrap à mettre en local (lib déjà installé) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
 
     <link href="http://localhost:8000/lib/zoombox/zoombox.css" rel="stylesheet" type="text/css" media="screen" />
 
-    <script type="text/javascript" src="http://localhost:8000/lib/node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="http://localhost:8000/lib/zoombox/zoombox.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/lib/node_modules/jquery/dist/jquery.min.js"></script>
+    
     <script type="text/javascript">
         jQuery(function($){
             $('a.zoombox').zoombox();
