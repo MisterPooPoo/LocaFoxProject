@@ -3,26 +3,33 @@
 
   <head>
         <meta charset="utf-8">
-        <title>LocaFox</title><!DOCTYPE html>
-        <html>
-            <head>
+        <title>LocaFox</title>
                 <meta charset="utf-8">
                 <title>La societe</title>
-        
+
                 <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
-                <link rel="stylesheet" href="../css/stylepopup.css"/>
+                <link rel="stylesheet" href="/css/stylepopup.css"/>
             </head>
-        
+
     <body>
         <h1>Identification</h1>
             <fieldset>
                 <form method="POST" >
                     <label>Adresse e-mail</label>
-                    <input type="email">
+                    {% if errors.email is defined %}
+                    <div>
+                      {{ errors.email }}
+                    </div>
+                    {% endif %}
+                    <input type="email" name="email" value="{{ formData.email }}">
                     <label>Mot de passe</label>
-                    <input type="password">
+                    {% if errors.password is defined %}
+                    <div>
+                      {{ errors.password }}
+                    </div>
+                    {% endif %}
+                    <input type="password" name="password" value="{{  formData.password }}">
                     <input type="submit" value="valider">
                 </form>
             </fieldset>
-       </div>
     </body>

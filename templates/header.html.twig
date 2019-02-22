@@ -1,16 +1,20 @@
 <img src="/images/banniere.png">
 
-  <h1>{{ brand }}</h1>
+<h1>{{ brand }}</h1>
 
-  <div id="menubar">
-      <a>Accueil</a>
-      <a class="zoombox" href="/societe.php">La société</a>
-      <a class="zoombox" href="/agences.php">Nos agences</a>
-      <a class="zoombox" href="/identifier.php">S'identifier</a>
-      <a class="zoombox" href="/inscrire.php">S'inscrire</a>
-  </div>
+<div id="menubar">
+  <a>Accueil</a>
+  <a class="zoombox" href="/societe.php">La société</a>
+  <a class="zoombox" href="/agences.php">Nos agences</a>
+  <a class="zoombox" href="/identifier.php">S'identifier</a>
+  <a class="zoombox" href="/inscrire.php">S'inscrire</a>
+</div>
 
 <div id="slogan">
-    <h2 class="louez">Louez Malin !</h2>
-    <p><em>Location de matériel et d'outillage</em><br><em>pour professionnels et particuliers</em></p>
+  <h2 class="louez">Louez Malin !</h2>
+  {% if session is defined %}
+  Hello {{ user.name }}!
+  {% else %}
+  <p><em>Location de matériel et d'outillage</em><br><em>pour professionnels et particuliers</em></p>
+  {% endif %}
 </div>

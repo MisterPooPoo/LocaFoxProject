@@ -3,91 +3,96 @@
 
 <head>
   <meta charset="utf-8">
-  <title>LocaFox</title><!DOCTYPE html>
-  <html>
-  <head>
-    <meta charset="utf-8">
-    <title>La societe</title>
+  <title>LocaFox</title>
+  <meta charset="utf-8">
+  <title>La societe</title>
 
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
-    <link rel="stylesheet" href="../css/stylepopup.css"/>
-  </head>
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
+  <link rel="stylesheet" href="/css/stylepopup.css"/>
+</head>
 
-  <body>
-    <h1>Inscription</h1>
-    <fieldset>
-      <form method="POST" action="inscrirepro.php">
-        <label>Nom de la Société</label>
-        {% if errors.name is defined %}
-        <div>
-          {{ errors.name }}
-        </div>
-        {% endif %}
-        <input name="name" type="text"><br><br>
+<body>
+  <h1>Inscription</h1>
+  <fieldset>
+    <form method="POST" action="inscrirepro.php">
+      <label>Nom de la Société</label>
+      {% if errors.name is defined %}
+      <div>
+        {{ errors.name }}
+      </div>
+      {% endif %}
+      <input name="name" type="text" value="{{ name }}"><br><br>
 
-        <label>Numéro de Siret</label>
-        {% if errors.siret is defined %}
-        <div>
-          {{ errors.siret }}
-        </div>
-        {% endif %}
-        <input name="siret" type="text"><br><br>
+      <label>Numéro de Siret</label>
+      {% if errors.siret is defined %}
+      <div>
+        {{ errors.siret }}
+      </div>
+      {% endif %}
+      <input name="siret" type="text" value="{{ siret }}"><br><br>
 
-        <label>Adresse e-mail</label>
-        {% if errors.email is defined %}
-        <div>
-          {{ errors.email }}
-        </div>
-        {% endif %}
-        <input name="email" type="email"><br><br>
+      <label>Adresse e-mail</label>
+      {% if errors.email is defined %}
+      <div>
+        {{ errors.email }}
+      </div>
+      {% endif %}
+      <input name="email" type="email" value="{{ email }}"><br><br>
 
-        <label>Mot de passe</label>
-        {% if errors.password is defined %}
-        <div>
-          {{ errors.password }}
-        </div>
-        {% endif %}
-        <input name="password" type="password"><br><br>
+      <label>Mot de passe</label>
+      {% if errors.password is defined %}
+      <div>
+        {{ errors.password }}
+      </div>
+      {% endif %}
+      {% if errors.lengthPassword is defined %}
+      <div>
+        {{ errors.lengthPassword }}
+      </div>
+      {% endif %}
+      <input name="password" type="password" value="{{ password }}"><br><br>
 
-        <label>Confirmer mot de passe</label>
-        {# @toDo ajouter un condition pour vérifier la concordance du mot de passe #}
-        <input type="password" name="confirmPassword"><br><br>
+      <label>Confirmer mot de passe</label>
+      {# ajouter un condition pour vérifier la concordance du mot de passe #}
+      {% if errors.confirmPassword is defined %}
+      {{ errors.confirmPassword }}
+      {% endif %}
+      <input type="password" name="confirmPassword" value="{{ confirmPassword }}"><br><br>
 
-        <label>Téléphone</label>
-        {% if errors.tel is defined %}
-        <div>
-          {{ errors.tel }}
-        </div>
-        {% endif %}
-        <input name="tel" type="tel"><br><br>
+      <label>Téléphone</label>
+      {% if errors.tel is defined %}
+      <div>
+        {{ errors.tel }}
+      </div>
+      {% endif %}
+      <input name="tel" type="tel" value="{{ tel }}"><br><br>
 
-        <label>Adresse</label>
-        {% if errors.address is defined %}
-        <div>
-          {{ errors.address }}
-        </div>
-        {% endif %}
-        <input name="address" type="text"><br><br>
+      <label>Adresse</label>
+      {% if errors.address is defined %}
+      <div>
+        {{ errors.address }}
+      </div>
+      {% endif %}
+      <input name="address" type="text" value="{{ address }}"><br><br>
 
-        <label>CP</label>
-        {% if errors.cp is defined %}
-        <div>
-          {{ errors.cp }}
-        </div>
-        {% endif %}
-        <input name="cp" type="text"><br><br>
+      <label>CP</label>
+      {% if errors.cp is defined %}
+      <div>
+        {{ errors.cp }}
+      </div>
+      {% endif %}
+      <input name="cp" type="text" value="{{ cp }}"><br><br>
 
-        <label>Ville</label>
-        {% if errors.city is defined %}
-        <div>
-          {{ errors.city }}
-        </div>
-        {% endif %}
-        <input name="city" type="text"><br><br>
+      <label>Ville</label>
+      {% if errors.city is defined %}
+      <div>
+        {{ errors.city }}
+      </div>
+      {% endif %}
+      <input name="city" type="text" value="{{ city }}"><br><br>
 
-        <input type="submit" value="valider">
-      </form>
-    </fieldset>
-  </div>
+      <input type="submit" value="valider">
+    </form>
+  </fieldset>
 </body>
 </html>
