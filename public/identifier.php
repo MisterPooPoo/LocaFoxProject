@@ -39,6 +39,7 @@ $errors = [];
 $session = '';
 $email ='';
 $password = '';
+$_SESSION = [];
 
 $formData = [
   'email' => null,
@@ -46,21 +47,30 @@ $formData = [
 ];
 
 if($_POST) {
-
+  if(empty($_POST['email'])) {
+    $errors['email'] = 'Vous devez renseigner ce champ';
+  } else {
     $formData['email'] = $_POST['email'];
-    $formData['password'] = $_POST['password'];
+  }
 
-  $user = $conn->fetchAssoc('SELECT * FROM client WHERE MailClient = :email',[
+  if(empty($_POST['password'])) {
+    $errors['password'] = 'Vous devez renseigner ce champ';
+  } else {
+    $formData['password'] = $_POST['password'];
+  }
+
+  $user = $conn->fetchAssoc('SELECT * FROM particulier P JOIN client C on C.NumClient=P.CodePart WHERE MailClient = :email',[
     'email' => $formData['email'],
   ]);
 
-  if (preg_match("/" . $formData['password'] . "/","/" . $user['MdpClient'] . "/")) {
-    $session = $user;
-    // @toDo fermer la zoombox
-    header('Location: index.php');
-    exit();
-  } else {
-    $errors['password'] = 'Email ou mot de passe incorrect';
+  if(!($errors)) {
+    if(preg_match("/" . $formData['password'] . "/","/" . $user['MdpClient'] . "/")) {
+      session_start();
+      $_SESSION = $user;
+      header('Location: index.php');
+    } else {
+      $errors['password'] = 'Email ou mot de passe incorrect';
+    }
   }
 }
 

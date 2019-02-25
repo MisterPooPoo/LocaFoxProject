@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Mon Compte</title>
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
+  <link rel="stylesheet" href="/css/stylepopup.css"/>
+</head>
+<body>
+
+  <h1>Mon Compte</h1>
+  <p>
+    Nom {{ session.NomClient }}
+    Adresse {{ session.AdClient }}
+    Ville {{ session.VilleClient }}
+    Code Postal {{ session.CPClient }}
+    Téléphone {{ session.TelClient }}
+    Email {{  session.MailClient }}
+  </p>
+  {% if session.CodePart %}
+  <p class="particulier">
+    Prénom {{ session.PrenomPart }}
+    Fidélité {{ session.FidPart }}
+  </p>
+  {% else %}
+  <p class="professionnel">
+    Numéro SIRET {{ session.Siret }}
+  </p>
+  {% endif %}
+  <form method="POST" action="compte.php">
+    <input type="submit" value="Déconnexion">
+  </form>
+
+</body>
+</html>

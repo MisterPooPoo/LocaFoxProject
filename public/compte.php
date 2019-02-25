@@ -1,5 +1,4 @@
 <?php
-
 use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\DriverManager;
 
@@ -20,14 +19,9 @@ $connectionParams = [
 ];
 
 $conn = DriverManager::getConnection($connectionParams, $config);
-// faire correspondre le deux premières lettres de la cat avec les deux première de la sous cat
-$catSql = 'SELECT NomCat, NumCat FROM Categorie';
-$subCatSql = 'SELECT NomsousCat, NumsousCat FROM SousCategorie';
 
-// envoi d'une requête SQL à la BDD et récupération du résultat sous forme de tableau PHP dans la variable `$items`
-$categories = $conn->fetchAll($catSql);
-$subCategories = $conn->fetchAll($subCatSql);
 $_SESSION = [];
+session_start();
 
 // instanciation du chargeur de templates
 $loader = new Twig_Loader_Filesystem(__DIR__.'/../templates');
@@ -43,20 +37,12 @@ $twig = new Twig_Environment($loader, [
 // chargement de l'extension Twig_Extension_Debug
 $twig->addExtension(new Twig_Extension_Debug());
 
-$brand = 'LocaFox';
-$category = '';
-$subCategory = '';
-
-if (isset($_SESSION)) {
-  session_start();
+if(isset($_POST)) {
+  session_destroy();
+  header('Location: index.php');
 }
 
-//voir pour faire un if soit côté templates soir côté public pour afficher la page différemment si le client est connecté ou non connecté.
-
-echo $twig->render('index.html.twig', [
+echo $twig->render('compte.html.twig', [
     // transmission de données au template
-    'brand' => $brand,
-    'categories' => $categories,
-    'subCategories' => $subCategories,
-    'session' => $_SESSION,
+  'session' => $_SESSION,
 ]);

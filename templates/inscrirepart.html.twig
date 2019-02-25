@@ -101,6 +101,12 @@
         <input type="text" name="city" value="{{ city }}"><br><br>
 
         <input type="submit" value="valider">
+        
+        {% if valid %}
+        <script type="text/javascript">
+        window.parent.$.zoombox.close();
+        </script>
+        {% endif %}
       </form>
     </fieldset>
 </body>

@@ -49,6 +49,7 @@ $tel = '';
 $address = '';
 $cp = '';
 $city = '';
+$valid = '';
 
 if ($_POST) {
     // vérifier la validité des données
@@ -138,6 +139,8 @@ if ($_POST) {
         'firstName' => $firstName,
         'sexe' => $sexe,
       ));
+      header('Location: index.php');
+
     }
   }
 
@@ -156,4 +159,5 @@ echo $twig->render('inscrirepart.html.twig', [
     'password' => $password,
     'firstName' => $firstName,
     'sexe' => $sexe,
+    'valid' => $valid,
 ]);

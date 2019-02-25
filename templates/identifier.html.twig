@@ -14,7 +14,7 @@
     <body>
         <h1>Identification</h1>
             <fieldset>
-                <form method="POST" >
+                <form method="POST"  action="identifier.php">
                     <label>Adresse e-mail</label>
                     {% if errors.email is defined %}
                     <div>
@@ -28,7 +28,7 @@
                       {{ errors.password }}
                     </div>
                     {% endif %}
-                    <input type="password" name="password" value="{{  formData.password }}">
+                    <input type="password" name="password" value="{{ formData.password }}">
                     <input type="submit" value="valider">
                 </form>
             </fieldset>
