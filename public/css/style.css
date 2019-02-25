@@ -94,14 +94,6 @@ header img{
   font-size:0.8em;
 }
 
-mediascreen
-@media all and (max-width: 1024px)
-{
-	#menu-accordeon ul li a, #menu-accordeon li:hover li a {
-	  font-size: 2em;
-	}
-}
-
 #menu-accordeon li:hover {
    background: #ea3200;
 }
@@ -152,9 +144,6 @@ mediascreen
 
 		 .image_prod {
 			display: flex;
-			position: relative;
-			top: -15%;
-			left: 3%;
 			width: 60%;
 			height: 80%;
 			border: 1px solid #D33E24;
