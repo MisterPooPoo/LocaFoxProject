@@ -35,11 +35,39 @@ $twig = new Twig_Environment($loader, [
 // chargement de l'extension Twig_Extension_Debug
 $twig->addExtension(new Twig_Extension_Debug());
 
-$brand = 'LocaFox';
+$errors = [];
+$session = '';
+$email ='';
+$password = '';
 
-//voir pour faire un if soit côté templates soir côté public pour afficher la page différemment si le client est connecté ou non connecté.
+$formData = [
+  'email' => null,
+  'password' => null,
+];
+
+if($_POST) {
+
+    $formData['email'] = $_POST['email'];
+    $formData['password'] = $_POST['password'];
+
+  $user = $conn->fetchAssoc('SELECT * FROM client WHERE MailClient = :email',[
+    'email' => $formData['email'],
+  ]);
+
+  if (preg_match("/" . $formData['password'] . "/","/" . $user['MdpClient'] . "/")) {
+    $session = $user;
+    // @toDo fermer la zoombox
+    header('Location: index.php');
+    exit();
+  } else {
+    $errors['password'] = 'Email ou mot de passe incorrect';
+  }
+}
 
 echo $twig->render('identifier.html.twig', [
     // transmission de données au template
-    'brand' => $brand,
+    'errors' => $errors,
+    'formData' => $formData,
+    'email'=> $email,
+    'password' => $password,
 ]);
