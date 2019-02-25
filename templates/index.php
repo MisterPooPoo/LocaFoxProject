@@ -7,9 +7,6 @@
 
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
     <link rel="stylesheet" href="http://localhost:8000/public/css/style.css"/>
-    <link rel="stylesheet" href="http://localhost:8000/public/css/styleproduit.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="http://localhost:8000/lib/zoombox/zoombox.css" rel="stylesheet" type="text/css" media="screen" />
 
@@ -47,7 +44,7 @@
         <div id="fil_ariane">
           <a> Accueil </a> >
           <a> Confort du Chantier </a> >
-          <span> Chauffage & Climatisation</span>
+          <span> Chauffage & Climatisation </span>
         </div>
 
         <?php include('pages_produits/OU01.php'); ?>
