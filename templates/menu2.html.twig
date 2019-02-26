@@ -3,13 +3,14 @@
     <span>Choisi une catégorie et sélectionne tout ce dont tu as besoin !</span>
 </div>
 
+
     <ul id="menu-accordeon">
         {% for categorie in categories %}
-      <li><a href="#">{{ categorie.NomCat }}</a>
+      <li><a>{{ categorie.NomCat }}</a>
         {% for sousCategorie in subCategories %}
           {% if sousCategorie.NumsousCat matches "/" ~ categorie.NumCat ~ "/" %}
         <ul>
-           <li><a href="#">{{ sousCategorie.NomsousCat }}</a></li>
+           <li><a href="/products.html.twig">{{ sousCategorie.NomsousCat }}</a></li>
         </ul>
         {% endif %}
         {% endfor %}

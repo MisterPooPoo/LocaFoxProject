@@ -1,0 +1,20 @@
+<section id="selecteur">
+
+  {% for sousCategorie in subCategories %}
+    {% if sousCategorie.NumsousCat == 'EV01' %}
+      {% for product in products %}
+        {% if product.NumProd matches "/" ~ sousCategorie.NumsousCat ~ "/" %}
+	<article class="select_prod">
+			<a class="zoombox" href="/fiche_prod.php">
+			<img class="image_prod" src= "/images/produits/CC01-001.jpg"/>
+			</a>
+			<span class="NomProd"> {{ product.NomProd }} </span>
+			<span class="PrixTTC"> {{ product.PrixHT }} &euro; <sup> *TTC/jour </sup></span>
+			<span class="NumProd"> - {{ product.NumProd }} - </span>
+  </article>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+</section>

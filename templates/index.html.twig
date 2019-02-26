@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="/css/style.css"/>
     <link rel="stylesheet" href="/css/styleproduit.css"/>
 
-    <!-- Lien vers bootstrap à mettre en local (lib déjà installé) -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
     <link href="/lib/zoombox/zoombox.css" rel="stylesheet" type="text/css" media="screen" />
 
     <script type="text/javascript" src="/lib/node_modules/jquery/dist/jquery.min.js"></script>
@@ -20,11 +17,11 @@
         jQuery(function($){
             $('a.zoombox').zoombox();
             $('a.zoombox').zoombox({
-                theme : 'lightbox',
+                theme : 'zoombox',
                 opacity : 0.6,
                 duration : 600,
                 animation : true,
-                width : 600,
+                width : 700,
                 height : 500,
                 gallery : false,
                 autoplay : false
@@ -41,7 +38,7 @@
 
   <div id = "corps_page">
       <section id = "section1">
-            {% include 'menu.html.twig' %}
+            {% include 'menu2.html.twig' %}
       </section>
 
       <section id= "section2">
@@ -51,7 +48,7 @@
           <span>Chauffage et Climatisation</span>
         </div>
 
-        {% include 'pages_produits/OU01.html.twig' %}
+        {% include 'products.html.twig' %}
       </section>
   </div>
 

@@ -11,7 +11,6 @@ DELETE FROM Facture;
 DELETE FROM Stocker;
 DELETE FROM Concerner;
 
--- Insertion Données --
 
 INSERT INTO Client (NumClient, NomClient, AdClient, VilleClient, CPClient, TelClient, MailClient, MdpClient)
   VALUES
@@ -54,7 +53,7 @@ INSERT INTO Categorie (NumCat, NomCat)
   ('EV', 'Espace Vert'),
   ('OU', 'Outillage');
 
-INSERT INTO SousCategorie (NumSousCat, NomsousCat, NumCat)
+INSERT INTO SousCategorie (NumsousCat, NomsousCat, NumCat)
   VALUES
   ('CC01', 'Chauffage et Climatisation', 'CC'),
   ('TE01', 'Echaffaudage', 'TE'),
@@ -81,9 +80,9 @@ INSERT INTO SousCategorie (NumSousCat, NomsousCat, NumCat)
   ('OU04', 'Peinture', 'OU'),
   ('OU05', 'Finition', 'OU');
 
-INSERT INTO Produit (NumProd, NomProd, PrixHT, NumSousCat)
+INSERT INTO Produit (NumProd, NomProd, PrixHT, Image, NumsousCat)
   VALUES
-  ('CC01-001', 'Climatiseur mobile 40m3', 44.56, 'CC01'),
+  ('CC01-001', 'Climatiseur mobile 40m3', 44.56, '''CC01'),
   ('CC01-002', 'Chauffage fioul 2500m3/h', 76.18, 'CC01'),
   ('CC01-003', 'Chauffage gaz 2500m3/h', 71.86, 'CC01'),
   ('CC01-004', 'Chauffage electrique 550m3/h', 41.63, 'CC01'),
