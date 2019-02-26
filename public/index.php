@@ -23,11 +23,15 @@ $conn = DriverManager::getConnection($connectionParams, $config);
 // faire correspondre le deux premières lettres de la cat avec les deux première de la sous cat
 $catSql = 'SELECT NomCat, NumCat FROM Categorie';
 $subCatSql = 'SELECT NomsousCat, NumsousCat FROM SousCategorie';
+$productsSql = 'SELECT NumProd, NomProd, PrixHT FROM Produit';
 
 // envoi d'une requête SQL à la BDD et récupération du résultat sous forme de tableau PHP dans la variable `$items`
 $categories = $conn->fetchAll($catSql);
 $subCategories = $conn->fetchAll($subCatSql);
+
 $_SESSION = [];
+
+$products = $conn->fetchAll($productsSql);
 
 // instanciation du chargeur de templates
 $loader = new Twig_Loader_Filesystem(__DIR__.'/../templates');
@@ -49,12 +53,11 @@ if (isset($_SESSION)) {
   session_start();
 }
 
-//voir pour faire un if soit côté templates soir côté public pour afficher la page différemment si le client est connecté ou non connecté.
-
 echo $twig->render('index.html.twig', [
     // transmission de données au template
     'brand' => $brand,
     'categories' => $categories,
     'subCategories' => $subCategories,
     'session' => $_SESSION,
+    'products' => $products,
 ]);

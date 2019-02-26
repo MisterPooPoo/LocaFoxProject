@@ -18,7 +18,8 @@
 <div id="slogan">
   <h2 class="louez">Louez Malin !</h2>
   {% if session %}
-  Hello {{ session.NomClient }}!
+  {# @toDo gérer le sexe et code -Part -Pro #}
+  Bienvenue {{ session.NomClient }}!
   {% else %}
   <p><em>Location de matériel et d'outillage</em><br><em>pour professionnels et particuliers</em></p>
   {% endif %}

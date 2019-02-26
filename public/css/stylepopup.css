@@ -19,7 +19,7 @@ header {
 	padding: 0;
 }
 
-#corps { 
+#corps {
 	padding-left: 20%;
 	padding-right: 20%;
 	padding-top: 5%;
@@ -50,13 +50,8 @@ header {
 	margin-right: 20%;
 }
 
-#corpsinscrire { 
+#corpsinscrire {
 	display: flex;
 	flex-direction: row;
 	padding-top: 10%;
 }
-
-h1, section {
-	text-align: center;
-}
-

@@ -33,7 +33,7 @@
               <i>{{ errors.firstName }}</i>
             </div>
             {% endif %}
-            
+
             <div id="sexe">
               <label>Sexe</label>
               <input type="radio" name="sexe" value="H" >Homme
@@ -103,46 +103,10 @@
             </div>
             {% endif %}
 
-<<<<<<< HEAD
-        <label>Adresse</label>
-        {% if errors.address is defined %}
-        <div>
-          {{ errors.address }}
-        </div>
-        {% endif %}
-        <input type="text" name="address" value="{{ address }}"><br><br>
-
-        <label>CP</label>
-        {% if errors.cp is defined %}
-        <div>
-          {{ errors.cp }}
-        </div>
-        {% endif %}
-        <input type="text" name="cp" value="{{ cp }}"><br><br>
-
-        <label>Ville</label>
-        {% if errors.city is defined %}
-        <div>
-          {{ errors.city }}
-        </div>
-        {% endif %}
-        <input type="text" name="city" value="{{ city }}"><br><br>
-
-        <input type="submit" value="valider">
-        
-        {% if valid %}
-        <script type="text/javascript">
-        window.parent.$.zoombox.close();
-        </script>
-        {% endif %}
-      </form>
-    </fieldset>
-=======
             <input type="submit" value="valider">
             {# Fonction pour fermer la zoombox lorsque le formulaire est validé ==> $_zoombox_close() #}
           </form>
         </fieldset>
       </div>
->>>>>>> 5c05e5d1465f8bd5a931b91ce0d1156b990669fb
 </body>
 </html>

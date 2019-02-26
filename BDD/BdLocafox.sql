@@ -2,7 +2,7 @@ drop database if exists BdLocafox;
 create database BdLocafox;
   use BdLocafox;
 
-  -- creation de la base --
+
 
   create table Client
     ( NumClient smallint (5),
@@ -40,10 +40,10 @@ create database BdLocafox;
     );
 
   create table SousCategorie
-    ( NumSousCat varchar (4),
+    ( NumsousCat varchar (4),
       NomsousCat varchar (45) not null,
       NumCat varchar (2),
-      constraint pk_SousCategorie primary key (NumSousCat),
+      constraint pk_SousCategorie primary key (NumsousCat),
       constraint fk_SousCategorie_Categorie foreign key (Numcat) references Categorie (NumCat)
     );
 
@@ -51,10 +51,11 @@ create database BdLocafox;
     ( NumProd varchar (8),
       NomProd varchar (45) not null,
       PrixHT decimal (6,2) not null,
-      NumSousCat varchar (4),
+      Image varchar (45) not null,
+      NumsousCat varchar (4),
       constraint pk_Produit primary key (NumProd),
       constraint ck_QteStock check (QteStock>=0),
-      constraint fk_Produit_SousCategorie foreign key (NumSousCat) references SousCategorie (NumSousCat)
+      constraint fk_Produit_SousCategorie foreign key (NumsousCat) references SousCategorie (NumSousCat)
     );
 
   create table Agence
