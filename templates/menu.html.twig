@@ -5,9 +5,11 @@
 
   </div>
     <ul id="menu-accordeon">
+
         {% for categorie in categories %}
       <li><a class="centre" href="#">{{ categorie.NomCat }}</a>
         {% for sousCategorie in subCategories %}
+
           {% if sousCategorie.NumsousCat matches "/" ~ categorie.NumCat ~ "/" %}
         <ul class="sous_menu">
            <li><a href="#">{{ sousCategorie.NomsousCat }}</a></li>

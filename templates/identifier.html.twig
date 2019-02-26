@@ -12,16 +12,23 @@
             </head>
 
     <body>
+      <header>
         <h1>Identification</h1>
+      </header>
+          <div id="corps">
             <fieldset>
+<<<<<<< HEAD
                 <form method="POST"  action="identifier.php">
+=======
+                <form id="formulaire" method="POST" >
+>>>>>>> 5c05e5d1465f8bd5a931b91ce0d1156b990669fb
                     <label>Adresse e-mail</label>
                     {% if errors.email is defined %}
                     <div>
                       {{ errors.email }}
                     </div>
                     {% endif %}
-                    <input type="email" name="email" value="{{ formData.email }}">
+                    <input type="email" name="email" value="{{ formData.email }}"><br><br>
                     <label>Mot de passe</label>
                     {% if errors.password is defined %}
                     <div>
@@ -30,6 +37,8 @@
                     {% endif %}
                     <input type="password" name="password" value="{{ formData.password }}">
                     <input type="submit" value="valider">
+                    {# Fonction pour fermer la zoombox lorsque le formulaire est validé ==> $_zoombox_close() #}
                 </form>
             </fieldset>
+          </div>
     </body>

@@ -12,87 +12,91 @@
 </head>
 
 <body>
-  <h1>Inscription</h1>
-  <fieldset>
-    <form method="POST" action="inscrirepro.php">
-      <label>Nom de la Société</label>
-      {% if errors.name is defined %}
-      <div>
-        {{ errors.name }}
-      </div>
-      {% endif %}
-      <input name="name" type="text" value="{{ name }}"><br><br>
+<header>
+    <h1>Inscription</h1>
+</header>
+  <div id="corps">
+    <fieldset>
+      <form id="formulaire" method="POST" action="inscrirepro.php">
+        <label>Nom de la Société</label>
+        <input name="name" type="text" value="{{ name }}">
+        {% if errors.name is defined %}
+        <div>
+          <i>{{ errors.name }}</i>
+        </div>
+        {% endif %}
 
-      <label>Numéro de Siret</label>
-      {% if errors.siret is defined %}
-      <div>
-        {{ errors.siret }}
-      </div>
-      {% endif %}
-      <input name="siret" type="text" value="{{ siret }}"><br><br>
+        <label>Numéro de Siret</label>
+        <input name="siret" type="text" value="{{ siret }}">
+        {% if errors.siret is defined %}
+        <div>
+          <i>{{ errors.siret }}</i>
+        </div>
+        {% endif %}
 
-      <label>Adresse e-mail</label>
-      {% if errors.email is defined %}
-      <div>
-        {{ errors.email }}
-      </div>
-      {% endif %}
-      <input name="email" type="email" value="{{ email }}"><br><br>
+        <label>Adresse e-mail</label>
+        <input name="email" type="email" value="{{ email }}">
+        {% if errors.email is defined %}
+        <div>
+          <i>{{ errors.email }}</i>
+        </div>
+        {% endif %}
 
-      <label>Mot de passe</label>
-      {% if errors.password is defined %}
-      <div>
-        {{ errors.password }}
-      </div>
-      {% endif %}
-      {% if errors.lengthPassword is defined %}
-      <div>
-        {{ errors.lengthPassword }}
-      </div>
-      {% endif %}
-      <input name="password" type="password" value="{{ password }}"><br><br>
+        <label>Mot de passe</label>
+        <input name="password" type="password" value="{{ password }}">
+        {% if errors.password is defined %}
+        <div>
+         <i>{{ errors.password }}</i>
+        </div>
+        {% endif %}
+        {% if errors.lengthPassword is defined %}
+        <div>
+          <i>{{ errors.lengthPassword }}</i>
+        </div>
+        {% endif %}
 
-      <label>Confirmer mot de passe</label>
-      {# ajouter un condition pour vérifier la concordance du mot de passe #}
-      {% if errors.confirmPassword is defined %}
-      {{ errors.confirmPassword }}
-      {% endif %}
-      <input type="password" name="confirmPassword" value="{{ confirmPassword }}"><br><br>
+        <label>Confirmer mot de passe</label>
+        <input type="password" name="confirmPassword" value="{{ confirmPassword }}">
+        {% if errors.confirmPassword is defined %}
+          <i>{{ errors.confirmPassword }}</i>
+        {% endif %}
 
-      <label>Téléphone</label>
-      {% if errors.tel is defined %}
-      <div>
-        {{ errors.tel }}
-      </div>
-      {% endif %}
-      <input name="tel" type="tel" value="{{ tel }}"><br><br>
+        <label>Téléphone</label>
+        <input name="tel" type="tel" value="{{ tel }}">
+        {% if errors.tel is defined %}
+        <div>
+          <i>{{ errors.tel }}</i>
+        </div>
+        {% endif %}
 
-      <label>Adresse</label>
-      {% if errors.address is defined %}
-      <div>
-        {{ errors.address }}
-      </div>
-      {% endif %}
-      <input name="address" type="text" value="{{ address }}"><br><br>
+        <label>Adresse</label>
+        <input name="address" type="text" value="{{ address }}">
+        {% if errors.address is defined %}
+        <div>
+          <i>{{ errors.address }}</i>
+        </div>
+        {% endif %}
 
-      <label>CP</label>
-      {% if errors.cp is defined %}
-      <div>
-        {{ errors.cp }}
-      </div>
-      {% endif %}
-      <input name="cp" type="text" value="{{ cp }}"><br><br>
+        <label>CP</label>
+        <input name="cp" type="text" value="{{ cp }}">
+        {% if errors.cp is defined %}
+        <div>
+          <i>{{ errors.cp }}</i>
+        </div>
+        {% endif %}
 
-      <label>Ville</label>
-      {% if errors.city is defined %}
-      <div>
-        {{ errors.city }}
-      </div>
-      {% endif %}
-      <input name="city" type="text" value="{{ city }}"><br><br>
+        <label>Ville</label>
+        <input name="city" type="text" value="{{ city }}">
+        {% if errors.city is defined %}
+        <div>
+          <i>{{ errors.city }}</i>
+        </div>
+        {% endif %}
 
-      <input type="submit" value="valider">
-    </form>
-  </fieldset>
+        <input type="submit" value="valider">
+        {# Fonction pour fermer la zoombox lorsque le formulaire est validé ==> $_zoombox_close() #}
+      </form>
+    </fieldset>
+  </div>
 </body>
 </html>

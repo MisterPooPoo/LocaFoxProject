@@ -6,25 +6,32 @@
     <title>{{ brand }}</title>
 
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
+<<<<<<< HEAD:templates/index.php
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <link href="lib/zoombox/zoombox.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <script type="text/javascript" src="/lib/zoombox/zoombox.js"></script>
+    <script type="text/javascript" src="/lib/node_modules/jquery/dist/jquery.min.js"></script>
+    
+=======
     <link rel="stylesheet" href="/css/style.css"/>
     <link rel="stylesheet" href="/css/styleproduit.css"/>
-
-    <!-- Lien vers bootstrap à mettre en local (lib déjà installé) -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="/lib/zoombox/zoombox.css" rel="stylesheet" type="text/css" media="screen" />
 
     <script type="text/javascript" src="/lib/node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/lib/zoombox/zoombox.js"></script>
+>>>>>>> 979e397a8466e16497d421846b55cd1ef2b79d5f:templates/index.html.twig
     <script type="text/javascript">
         jQuery(function($){
             $('a.zoombox').zoombox();
             $('a.zoombox').zoombox({
-                theme : 'lightbox',
+                theme : 'zoombox',
                 opacity : 0.6,
                 duration : 600,
                 animation : true,
-                width : 600,
+                width : 700,
                 height : 500,
                 gallery : false,
                 autoplay : false

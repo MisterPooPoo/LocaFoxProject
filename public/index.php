@@ -44,8 +44,6 @@ $twig = new Twig_Environment($loader, [
 $twig->addExtension(new Twig_Extension_Debug());
 
 $brand = 'LocaFox';
-$category = '';
-$subCategory = '';
 
 if (isset($_SESSION)) {
   session_start();
