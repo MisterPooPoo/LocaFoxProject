@@ -48,6 +48,7 @@ $password = '';
 $address = '';
 $cp = '';
 $city = '';
+$closeZoombox = false;
 
 if ($_POST) {
   // vérifier la validité des données
@@ -128,11 +129,9 @@ if ($_POST) {
       'numClient' => $numClient,
       'siret' => $siret,
     ));
+    $closeZoombox = true;
   }
 }
-
-
-//voir pour faire un if soit côté templates soir côté public pour afficher la page différemment si le client est connecté ou non connecté.
 
 echo $twig->render('inscrirepro.html.twig', [
   // transmission de données au template
@@ -148,4 +147,5 @@ echo $twig->render('inscrirepro.html.twig', [
   'cp' => $cp,
   'city' => $city,
   'errors' => $errors,
+  'closeZoombox' => $closeZoombox,
 ]);

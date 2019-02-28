@@ -2,28 +2,34 @@ html {
 	font-family: 'CarlitoRegular';
 	width: 100%;
 	height: 100%;
-    font-size: 2vw;
-}
-
-body {
-	background-color: lightgrey;
-	width: 100%;
-	height: 100%;
+    font-size: 1.6vw;
 }
 
 header {
 	position: relative;
 	width: 100%;
-	height: 15%;
-	background-color: #ea3200;
-	padding: 0;
+}
+
+header img {
+	width: 100%;
+}
+
+body {
+	background-color: white;
+}
+
+body h1 {
+	text-align: center;
+	color: #f06601;
 }
 
 #corps {
-	padding-left: 20%;
-	padding-right: 20%;
-	padding-top: 5%;
-	width: 60%;
+	background-color: lightgrey;
+}
+
+#text {
+	padding-left: 10%;
+	width: 80%;
 }
 
 #formulaire {
@@ -39,19 +45,25 @@ header {
 #inscrirepart {
 	background-color: #3cc35a;
 	width: 30%;
-	height: 15%;
-	margin-left: 20%;
+	height: 30px;
+	margin: 5%;
+	text-align: center;
 }
 
 #inscrirepro {
-	background-color: #ea3200;
+	background-color: #f06601;
 	width: 30%;
-	height: 15%;
-	margin-right: 20%;
+	height: 30px;
+	margin: 5%;
+	text-align: center;
 }
 
 #corpsinscrire {
 	display: flex;
 	flex-direction: row;
-	padding-top: 10%;
+	justify-content: center;
+}
+
+#corpsinscrire a {
+	font-size: 2vw;
 }

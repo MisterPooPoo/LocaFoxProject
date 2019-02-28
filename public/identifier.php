@@ -36,10 +36,9 @@ $twig = new Twig_Environment($loader, [
 $twig->addExtension(new Twig_Extension_Debug());
 
 $errors = [];
-$session = '';
 $email ='';
 $password = '';
-$_SESSION = [];
+$closeZoombox = false;
 
 $formData = [
   'email' => null,
@@ -59,18 +58,28 @@ if($_POST) {
     $formData['password'] = $_POST['password'];
   }
 
-  $user = $conn->fetchAssoc('SELECT * FROM particulier P JOIN client C on C.NumClient=P.CodePart WHERE MailClient = :email',[
+  $userPart = $conn->fetchAssoc('SELECT * FROM particulier P JOIN client C ON C.NumClient=P.CodePart WHERE MailClient = :email',[
+    'email' => $formData['email'],
+  ]);
+  $userPro = $conn->fetchAssoc('SELECT * FROM professionnel P JOIN client C ON C.NumClient=P.CodePro WHERE MailClient = :email',[
     'email' => $formData['email'],
   ]);
 
   if(!($errors)) {
-    if(preg_match("/" . $formData['password'] . "/","/" . $user['MdpClient'] . "/")) {
+
+    if(preg_match("/" . $formData['password'] . "/","/" . $userPart['MdpClient'] . "/")
+    || preg_match("/" . $formData['password'] . "/","/" . $userPro['MdpClient'])) {
       session_start();
-      $_SESSION = $user;
-      header('Location: index.php');
-    } else {
+      if($userPart['MdpClient']) {
+      $_SESSION['user'] = $userPart;
+      } elseif($userPro['MdpClient']) {
+      $_SESSION['user'] = $userPro;
+      } else {
       $errors['password'] = 'Email ou mot de passe incorrect';
+      }
+      $closeZoombox = true;
     }
+
   }
 }
 
@@ -80,4 +89,5 @@ echo $twig->render('identifier.html.twig', [
     'formData' => $formData,
     'email'=> $email,
     'password' => $password,
+    'closeZoombox' => $closeZoombox,
 ]);

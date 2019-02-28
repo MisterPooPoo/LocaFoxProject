@@ -20,7 +20,6 @@ $connectionParams = [
 
 $conn = DriverManager::getConnection($connectionParams, $config);
 
-$_SESSION = [];
 session_start();
 
 // instanciation du chargeur de templates
@@ -36,11 +35,6 @@ $twig = new Twig_Environment($loader, [
 
 // chargement de l'extension Twig_Extension_Debug
 $twig->addExtension(new Twig_Extension_Debug());
-
-if(isset($_POST)) {
-  session_destroy();
-  header('Location: index.php');
-}
 
 echo $twig->render('compte.html.twig', [
     // transmission de données au template

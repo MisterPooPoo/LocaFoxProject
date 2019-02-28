@@ -1,21 +1,22 @@
 
 <div id="message">
-    <span>Choisi une catégorie et sélectionne tout ce dont tu as besoin !</span>
+  <span>Choisissez une catégorie et sélectionnez tout ce dont vous avez besoin !</span>
 </div>
 
-    <ul id="menu-accordeon">
+<ul id="menu-accordeon">
 
-        {% for categorie in categories %}
-      <li><a href="#">{{ categorie.NomCat }}</a>
-        {% for sousCategorie in subCategories %}
+  {% for categorie in categories %}
+  <li><a href="#">{{ categorie.NomCat }}</a>
+    {% for sousCategorie in subCategories %}
 
-          {% if sousCategorie.NumsousCat matches "/" ~ categorie.NumCat ~ "/" %}
-        <ul>
-           <li><a href="#">{{ sousCategorie.NomsousCat }}</a></li>
-        </ul>
-        {% endif %}
-        {% endfor %}
-      </li>
-      {% endfor %}
+      {% if sousCategorie.NumsousCat matches "/" ~ categorie.NumCat ~ "/" %}
+      <ul>
+        <li><a href="index.php?id={{sousCategorie.NumsousCat}}">{{ sousCategorie.NomsousCat }}</a></li>
+      </ul>
+      {% endif %}
+      
+    {% endfor %}
+  </li>
+  {% endfor %}
 
-    </ul>
+</ul>

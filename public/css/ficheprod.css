@@ -1,0 +1,70 @@
+html {
+	font-family: 'CarlitoRegular';
+	width: 100%;
+	height: auto;
+    font-size: 1.6vw;
+}
+
+body {
+	background-color: lightgrey;
+	width: 100%;
+	height: auto;
+}
+
+#imgprod {
+    width: 40%;
+    height: 40%;
+    border: 0.2ch;
+    border-style: solid;
+    border-color:darkgrey;
+    object-fit: contain;
+}
+
+#corps {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+}
+
+#infoprod {
+    width: 55%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+}
+
+
+#titre {
+    display: flex;
+    flex-direction: row;
+}
+
+#titre h1 {
+    color: #ea3200;
+}
+
+#prix {
+    margin-left: 50%;
+}
+
+
+#soustitre {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
+
+#soustitre img {
+    width: 30%;
+    height: auto;
+    object-fit: contain;
+    padding-left: 50%;
+}
+
+#quantite {
+    width: 30%;
+    padding-left: 20%;
+}
+

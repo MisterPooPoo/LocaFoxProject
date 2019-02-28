@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Mon panier</title>
+
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
+  <link rel="stylesheet" href="/css/ficheprod.css"/>
+</head>
+<body>
+  <h1>Mon Panier</h1>
+  {% if session.panier.id is defined %}
+    {% for product in products %}
+
+      {% if product.NumProd matches "/" ~ session.panier.id ~ "/" %}
+        <div>
+          <a href=""><img src=""></a>
+          <span class="num">{{ product.NumProd }}</span>
+          <span class="name">{{ product.NomProd }}</span>
+          <span class="price">{{ product.PrixHT }}</span>
+          <span class="quantity">Quantité </span>
+          <span class="subtotal">PrixTTC</span>
+          <span>
+            <a href="panier.php?del={{ product.NumProd }}" class="del">Supprimer</a>
+          </span>
+        </div>
+      {% endif %}
+
+    {% endfor %}
+    {% else %}
+    Votre panier est vide.
+  {% endif %}
+</body>
+</html>

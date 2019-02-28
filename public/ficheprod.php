@@ -21,7 +21,6 @@ $connectionParams = [
 
 $conn = DriverManager::getConnection($connectionParams, $config);
 
-// instanciation du chargeur de templates
 $loader = new Twig_Loader_Filesystem(__DIR__.'/../templates');
 
 // instanciation du moteur de template
@@ -32,12 +31,22 @@ $twig = new Twig_Environment($loader, [
     'strict_variables' => true,
 ]);
 
-// chargement de l'extension Twig_Extension_Debug
 $twig->addExtension(new Twig_Extension_Debug());
+
+$productsSql = 'SELECT NumProd, NomProd, PrixHT FROM Produit';
+$quantitySql = 'SELECT * FROM stocker';
+$products = $conn->fetchAll($productsSql);
+$quantity = $conn->fetchAll($quantitySql);
 
 $brand = 'LocaFox';
 
-echo $twig->render('societe.html.twig', [
+// var_dump($quantity);
+
+echo $twig->render('ficheprod.html.twig', [
     // transmission de données au template
+    'products' => $products,
+    'quantity' => $quantity,
     'brand' => $brand,
+    'get' => $_GET,
+
 ]);

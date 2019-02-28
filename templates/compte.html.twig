@@ -10,26 +10,26 @@
 
   <h1>Mon Compte</h1>
   <p>
-    Nom {{ session.NomClient }}
-    Adresse {{ session.AdClient }}
-    Ville {{ session.VilleClient }}
-    Code Postal {{ session.CPClient }}
-    Téléphone {{ session.TelClient }}
-    Email {{  session.MailClient }}
+    Nom {{ session.user.NomClient }}
+    Adresse {{ session.user.AdClient }}
+    Ville {{ session.user.VilleClient }}
+    Code Postal {{ session.user.CPClient }}
+    Téléphone {{ session.user.TelClient }}
+    Email {{  session.user.MailClient }}
   </p>
-  {% if session.CodePart %}
+  {% if session.CodePart is defined %}
   <p class="particulier">
-    Prénom {{ session.PrenomPart }}
-    Fidélité {{ session.FidPart }}
+    Prénom {{ session.user.PrenomPart }}
+    Fidélité {{ session.user.FidPart }}
   </p>
   {% else %}
   <p class="professionnel">
-    Numéro SIRET {{ session.Siret }}
+    Numéro SIRET {{ session.user.Siret }}
   </p>
   {% endif %}
-  <form method="POST" action="compte.php">
-    <input type="submit" value="Déconnexion">
-  </form>
+
+
+    <a href="logout.php">Déconnexion</a>
 
 </body>
 </html>

@@ -50,6 +50,7 @@ $address = '';
 $cp = '';
 $city = '';
 $valid = '';
+$closeZoombox = false;
 
 if ($_POST) {
     // vérifier la validité des données
@@ -139,7 +140,7 @@ if ($_POST) {
         'firstName' => $firstName,
         'sexe' => $sexe,
       ));
-      header('Location: index.php');
+      $closeZoombox = true;
 
     }
   }
@@ -160,4 +161,5 @@ echo $twig->render('inscrirepart.html.twig', [
     'firstName' => $firstName,
     'sexe' => $sexe,
     'valid' => $valid,
+    'closeZoombox' => $closeZoombox,
 ]);

@@ -38,7 +38,7 @@
 
   <div id = "corps_page">
       <section id = "section1">
-            {% include 'menu2.html.twig' %}
+            {% include 'menu.html.twig' %}
       </section>
 
       <section id= "section2">
@@ -47,8 +47,11 @@
           <a>Confort du chantier</a>
           <span>Chauffage et Climatisation</span>
         </div>
-
-        {% include 'products.html.twig' %}
+        {% if get %}
+          {% include 'products.html.twig' %}
+        {% else %}
+          {% include 'news.html.twig' %}
+        {% endif %}
       </section>
   </div>
 
@@ -57,9 +60,7 @@
   </footer>
 
           <!-- code JS alert site étudiant -->
-              <script>
-                  alert ("Attention! Ce site a été réalisé dans le cadre d'un projet d'étude au CNAM de Lille") ;
-              </script>
+
 
   </body>
 

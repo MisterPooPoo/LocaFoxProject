@@ -3,7 +3,7 @@
 <h1>{{ brand }}</h1>
 
 <div id="menubar">
-  <a>Accueil</a>
+  <a href="/index.php">Accueil</a>
   <a class="zoombox" href="/societe.php">La société</a>
   <a class="zoombox" href="/agences.php">Nos agences</a>
   {% if session %}
@@ -19,7 +19,11 @@
   <h2 class="louez">Louez Malin !</h2>
   {% if session %}
   {# @toDo gérer le sexe et code -Part -Pro #}
-  Bienvenue {{ session.NomClient }}!
+  {% if session.user.CodePart is defined %}
+  Bienvenue {{ session.user.PrenomPart }} {{ session.user.NomClient }} !
+  {% else %}
+  Bienvenue {{ session.user.NomClient }} !
+  {% endif %}
   {% else %}
   <p><em>Location de matériel et d'outillage</em><br><em>pour professionnels et particuliers</em></p>
   {% endif %}

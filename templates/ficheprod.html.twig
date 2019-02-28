@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ brand }}</title>
+
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
+    <link rel="stylesheet" href="/css/ficheprod.css"/>
+</head>
+
+<body>
+  {% for product in products %}
+  {% if product.NumProd matches "/" ~ get.num ~ "/" %}
+    <div id="corps">
+            <img id="imgprod" src="/images/produits/{{ product.NumProd }}.jpg">
+
+        <div id="infoprod">
+            <div id="titre">
+
+                <h1>{{ product.NomProd }}</h1>
+                <h1 id="prix"> {{ product.PrixHT }}&euro; <sup>TTC</sup></h1>
+            </div>
+
+            <div id="soustitre">
+                <span>{{ product.NumProd }}</span>
+                <div id="quantite">
+                    <label for="quantity" >Quantité</label>
+                        <select name="quantity" id="stock">
+
+
+                            <option value="1" selected="">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+
+                        </select>
+                </div>
+                <a href="/panier.php?id={{ product.NumProd }}"><img src="/images/iconepanier.png"></a>
+            </div>
+                <h3>Description du produit</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse laoreet at lectus pretium ultricies.
+                    Donec porttitor rutrum rhoncus.
+                    Sed diam ipsum, imperdiet sit amet nibh ut, porta molestie ligula.
+                    Ut hendrerit egestas orci. Maecenas nisl erat, luctus eget vehicula eget, porta vel libero.
+                    Vestibulum ante ipsum primis in faucibus orci.
+                </p>
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}
+
+</body>
+</html>
