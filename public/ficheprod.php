@@ -3,8 +3,6 @@
 use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\DriverManager;
 
-
-// activation du système d'autoloading de Composer
 require __DIR__.'/../vendor/autoload.php';
 
 $config = new Configuration();
@@ -35,18 +33,15 @@ $twig->addExtension(new Twig_Extension_Debug());
 
 $productsSql = 'SELECT NumProd, NomProd, PrixHT FROM Produit';
 $quantitySql = 'SELECT * FROM stocker';
+
 $products = $conn->fetchAll($productsSql);
 $quantity = $conn->fetchAll($quantitySql);
 
 $brand = 'LocaFox';
 
-// var_dump($quantity);
-
 echo $twig->render('ficheprod.html.twig', [
-    // transmission de données au template
     'products' => $products,
     'quantity' => $quantity,
     'brand' => $brand,
     'get' => $_GET,
-
 ]);

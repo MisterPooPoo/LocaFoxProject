@@ -20,18 +20,6 @@ $connectionParams = [
 ];
 
 $conn = DriverManager::getConnection($connectionParams, $config);
-// faire correspondre le deux premières lettres de la cat avec les deux première de la sous cat
-$catSql = 'SELECT NomCat, NumCat FROM Categorie';
-$subCatSql = 'SELECT NomsousCat, NumsousCat FROM SousCategorie';
-$productsSql = 'SELECT NumProd, NomProd, PrixHT FROM Produit';
-$tvaSql = 'SELECT TVA FROM Parametre';
-
-// envoi d'une requête SQL à la BDD et récupération du résultat sous forme de tableau PHP dans la variable `$items`
-$categories = $conn->fetchAll($catSql);
-$subCategories = $conn->fetchAll($subCatSql);
-$products = $conn->fetchAll($productsSql);
-$tva = $conn->fetchAll($tvaSql);
-//var_dump($products);
 
 // instanciation du chargeur de templates
 $loader = new Twig_Loader_Filesystem(__DIR__.'/../templates');
@@ -47,11 +35,20 @@ $twig = new Twig_Environment($loader, [
 // chargement de l'extension Twig_Extension_Debug
 $twig->addExtension(new Twig_Extension_Debug());
 
+$catSql = 'SELECT NomCat, NumCat FROM Categorie';
+$subCatSql = 'SELECT NomsousCat, NumsousCat FROM SousCategorie';
+$productsSql = 'SELECT NumProd, NomProd, PrixHT FROM Produit';
+$tvaSql = 'SELECT TVA FROM Parametre';
+
+$categories = $conn->fetchAll($catSql);
+$subCategories = $conn->fetchAll($subCatSql);
+$products = $conn->fetchAll($productsSql);
+$tva = $conn->fetchAll($tvaSql);
+
 $brand = 'LocaFox';
 
 session_start();
 if (isset($_SESSION['user'])) {
-  //var_dump($_SESSION['user']);
 } else {
   $_SESSION = [];
 }
@@ -65,5 +62,4 @@ echo $twig->render('index.html.twig', [
     'session' => $_SESSION,
     'products' => $products,
     'get' => $_GET,
-    'tva' => $tva,
 ]);
