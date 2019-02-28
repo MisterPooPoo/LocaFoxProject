@@ -18,7 +18,6 @@
 <div id="slogan">
   <h2 class="louez">Louez Malin !</h2>
   {% if session %}
-  {# @toDo gérer le sexe et code -Part -Pro #}
   {% if session.user.CodePart is defined %}
   Bienvenue {{ session.user.PrenomPart }} {{ session.user.NomClient }} !
   {% else %}

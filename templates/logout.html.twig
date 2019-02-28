@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    {% if closeZoombox %}
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  {% if closeZoombox %}
     <script type="text/javascript">
       parent.document.location.href = "/index.php";
       parent.$.zoombox.close();
     </script>
-    {% endif %}
-
-  </body>
+  {% endif %}
+</body>
 </html>

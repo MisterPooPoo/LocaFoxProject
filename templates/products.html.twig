@@ -4,14 +4,14 @@
     {% if sousCategorie.NumsousCat matches "/" ~ get.id ~ "/" %}
       {% for product in products %}
         {% if product.NumProd matches "/" ~ sousCategorie.NumsousCat ~ "/" %}
-	<article class="select_prod">
-			<a class="zoombox" href="/ficheprod.php?num={{ product.NumProd }}">
-			<img class="image_prod" src= "/images/produits/{{ product.NumProd }}.jpg"/>
-			</a>
-			<span class="NomProd"> {{ product.NomProd }} </span>
-			<span class="PrixTTC">{{ product.PrixHT }} &euro; <sup> *TTC/jour </sup></span>
-			<span class="NumProd"> - {{ product.NumProd }} - </span>
-  </article>
+          <article class="select_prod">
+            <a class="zoombox" href="/ficheprod.php?num={{ product.NumProd }}">
+              <img class="image_prod" src= "/images/produits/{{ product.NumProd }}.jpg"/>
+            </a>
+            <span class="NomProd"> {{ product.NomProd }} </span>
+            <span class="PrixTTC">{{ product.PrixHT }} &euro; <sup> *TTC/jour </sup></span>
+            <span class="NumProd"> - {{ product.NumProd }} - </span>
+          </article>
         {% endif %}
       {% endfor %}
     {% endif %}

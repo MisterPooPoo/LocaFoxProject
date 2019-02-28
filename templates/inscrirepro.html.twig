@@ -12,9 +12,9 @@
 </head>
 
 <body>
-<header>
+  <header>
     <img src="/images/bannierepopup.png">
-</header>
+  </header>
   <div id="corps">
     <h1>Inscription</h1>
     <div id="text">
@@ -48,7 +48,7 @@
           <input name="password" type="password" value="{{ password }}">
           {% if errors.password is defined %}
           <div>
-          <i>{{ errors.password }}</i>
+            <i>{{ errors.password }}</i>
           </div>
           {% endif %}
           {% if errors.lengthPassword is defined %}
@@ -60,7 +60,7 @@
           <label>Confirmer mot de passe</label>
           <input type="password" name="confirmPassword" value="{{ confirmPassword }}">
           {% if errors.confirmPassword is defined %}
-            <i>{{ errors.confirmPassword }}</i>
+          <i>{{ errors.confirmPassword }}</i>
           {% endif %}
 
           <label>Téléphone</label>
@@ -96,7 +96,6 @@
           {% endif %}
 
           <input type="submit" value="valider">
-          {# Fonction pour fermer la zoombox lorsque le formulaire est validé ==> $_zoombox_close() #}
         </form>
       </fieldset>
     </div>
@@ -104,10 +103,10 @@
 
   {% if closeZoombox %}
   <script type="text/javascript">
-    parent.document.location.href = "/index.php";
-    parent.$.zoombox.close();
+  parent.document.location.href = "/index.php";
+  parent.$.zoombox.close();
   </script>
   {% endif %}
-  
+
 </body>
 </html>
