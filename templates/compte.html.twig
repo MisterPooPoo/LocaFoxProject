@@ -17,7 +17,7 @@
     Téléphone {{ session.user.TelClient }}
     Email {{  session.user.MailClient }}
   </p>
-  {% if session.CodePart is defined %}
+  {% if session.user.CodePart is defined %}
   <p class="particulier">
     Prénom {{ session.user.PrenomPart }}
     Fidélité {{ session.user.FidPart }}

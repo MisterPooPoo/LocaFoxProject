@@ -38,12 +38,10 @@ $twig->addExtension(new Twig_Extension_Debug());
 $catSql = 'SELECT NomCat, NumCat FROM Categorie';
 $subCatSql = 'SELECT NomsousCat, NumsousCat FROM SousCategorie';
 $productsSql = 'SELECT NumProd, NomProd, PrixHT FROM Produit';
-$tvaSql = 'SELECT TVA FROM Parametre';
 
 $categories = $conn->fetchAll($catSql);
 $subCategories = $conn->fetchAll($subCatSql);
 $products = $conn->fetchAll($productsSql);
-$tva = $conn->fetchAll($tvaSql);
 
 $brand = 'LocaFox';
 
@@ -52,7 +50,6 @@ if (isset($_SESSION['user'])) {
 } else {
   $_SESSION = [];
 }
-
 
 echo $twig->render('index.html.twig', [
     // transmission de données au template

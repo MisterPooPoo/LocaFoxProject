@@ -78,7 +78,7 @@ if ($_POST) {
       if (!(strlen($_POST['password']) == 8)) {
         $errors['lengthPassword'] = "Le mot de passe doit contenir 8 caractères";
       } elseif (preg_match( "/" . $_POST['password'] . "/", "/" . $_POST['confirmPassword'] . "/")) {
-        $password = $_POST['password'];
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
       } else {
         $errors['confirmPassword'] = "Le mot de passe ne correspond pas";
       }

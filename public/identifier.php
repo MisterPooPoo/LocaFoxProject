@@ -60,8 +60,8 @@ if($_POST) {
 
   if(!($errors)) {
 
-    if(preg_match("/" . $formData['password'] . "/","/" . $userPart['MdpClient'] . "/")
-    || preg_match("/" . $formData['password'] . "/","/" . $userPro['MdpClient'])) {
+    if(preg_match("/" . password_hash($formData['password']) . "/","/" . password_hash($userPart['MdpClient'], PASSWORD_BCRYPT) . "/")
+    || preg_match("/" . password_hash($formData['password']) . "/","/" . password_hash($userPro['MdpClient'], PASSWORD_BCRYPT) )) {
       session_start();
       if($userPart['MdpClient']) {
       $_SESSION['user'] = $userPart;

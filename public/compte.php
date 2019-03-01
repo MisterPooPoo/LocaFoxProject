@@ -29,6 +29,7 @@ $twig->addExtension(new Twig_Extension_Debug());
 
 session_start();
 
+
 echo $twig->render('compte.html.twig', [
   'session' => $_SESSION,
 ]);
