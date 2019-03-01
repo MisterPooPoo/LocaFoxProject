@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contactez Locafox</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
+  <link rel="stylesheet" href="/css/stylepopup.css"/>
+  <style>
+  html {
+    display:; flex
+    flex-direction: column;
+    justify-content: center;
+    font-size:1.3em;
+    border: 1px solid;
+  }
+  </style>
+</head>
+<body>
+  <h1>Contactez nous !</h1>
+  <!-- Ceci est un commentaire HTML. Le code PHP devra remplacé cette ligne -->
+  <form method="post" action="<?php echo strip_tags($_SERVER['REQUEST_URI']); ?>">
+    <p>Votre nom et prénom: <input type="text" name="nom" size="30" /></p>
+    <p>Votre email: <span style="color:#ff0000;">*</span>: <input type="text" name="email" size="30" /></p>
+    <p>Message <span style="color:#ff0000;">*</span>:</p>
+    <textarea name="message" cols="60" rows="10"></textarea>
+    <p><input type="submit" name="submit" value="Envoyer" /></p>
+  </form>
+</body>
+</html>
