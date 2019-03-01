@@ -1,70 +1,107 @@
 html {
 	font-family: 'CarlitoRegular';
-	width: 100%;
-	height: auto;
     font-size: 1.6vw;
 }
 
 body {
-	background-color: lightgrey;
+	background-color: white;
+}
+
+header img {
 	width: 100%;
-	height: auto;
 }
 
 #imgprod {
+		display: flex;
     width: 40%;
     height: 40%;
-    border: 0.2ch;
-    border-style: solid;
-    border-color:darkgrey;
-    object-fit: contain;
+    border: solid 0.2ch darkgrey;
 }
 
 #corps {
-    width: 90%;
     display: flex;
     flex-direction: row;
     padding: 5%;
 }
 
 #infoprod {
-    width: 55%;
-    height: auto;
     display: flex;
     flex-direction: column;
-    padding-left: 5%;
+    margin-left: 5%;
+		background-color: lightgrey;
+		padding: 2%;
 }
 
-
-#titre {
+.titre {
     display: flex;
     flex-direction: row;
+		color: #ea3200;
+		height: 30%;
+		padding-top: 5%;
 }
 
-#titre h1 {
-    color: #ea3200;
+.nom_produit {
+	font-size: 2em;
+	width: 60%;
 }
 
-#prix {
-    margin-left: 50%;
+.prix {
+	font-size: 2.3em;
+	width: 40%;
+	text-align: right;
+
 }
 
+.prix sup {
+	font-size: 0.4em;
+}
 
 #soustitre {
     display: flex;
     flex-direction: row;
-    height: auto;
+		margin-top: 3%;
 }
 
-#soustitre img {
-    width: 30%;
-    height: auto;
-    object-fit: contain;
-    padding-left: 50%;
+#soustitre span {
+	display: flex;
+	font-size: 1.2em;
+	margin-right: 5%;
+	width: 30%;
+	height: 50%;
 }
 
-#quantite {
-    width: 30%;
-    padding-left: 20%;
+#soustitre div {
+	display: 	flex;
+	font-size: 1.2em;
+	width: 35%;
+	height: 50%;
 }
 
+a {
+	display: flex;
+	position: relative;
+	top: -30%;
+	width: 25%;
+	height: 110%;
+	margin-left: 10%;
+}
+
+.bouton_panier {
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+label {
+	margin-right: 2%;
+}
+
+#descri_prod {
+	margin-top: 5%;
+	text-align: justify;
+}
+
+h3 {
+	margin-top: 5%;
+	font-size: 1.3em;
+}

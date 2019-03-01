@@ -38,7 +38,9 @@ $twig->addExtension(new Twig_Extension_Debug());
 $catSql = 'SELECT NomCat, NumCat FROM Categorie';
 $subCatSql = 'SELECT NomsousCat, NumsousCat FROM SousCategorie';
 $productsSql = 'SELECT NumProd, NomProd, PrixHT FROM Produit';
+$agenceSql = 'SELECT * FROM Agence WHERE NumAgence="3" ';
 
+$agency = $conn->fetchAll($agenceSql);
 $categories = $conn->fetchAll($catSql);
 $subCategories = $conn->fetchAll($subCatSql);
 $products = $conn->fetchAll($productsSql);
@@ -59,4 +61,5 @@ echo $twig->render('index.html.twig', [
     'session' => $_SESSION,
     'products' => $products,
     'get' => $_GET,
+    'agency' => $agency,
 ]);

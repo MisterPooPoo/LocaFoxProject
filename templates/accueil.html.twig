@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/accueil.css"/>
+
+<div id="block">
+
+  <section id="sectionleft">
+    <img src="/images/agence.png"/>
+
+    {% for agence in agency %}
+        <div class="coordonnees">
+            <span> {{ agence.NomAgence }} </span>
+            <span> {{ agence.AdAgence }} {{ agence.CPAgence }} {{ agence.VilleAgence }} </span>
+            <span> Responsable: J. DUPONT</span>
+            <span> Du Lundi au Samedi / 8H00-21H00</span>
+        </div>
+    {% endfor %}
+  </section>
+
+  <section id="sectionright">
+    <div class="texte">
+			<span class="titre">Venez découvrir votre nouvelle Agence LocaFox !</span>
+
+          <p>
+            <span class="slogan"><b> La Proximité avec nos clients est une de nos priorités : </b></span><br>
+        		C'est au coeur du centre-ville de Dunkerque que vous retrouverez notre nouvelle agence.
+            Depuis plusieurs années maintenant nous nous efforçons de répondre à vos besoins.
+            Retrouvez désormais un large choix de produit à des tarifs toujours aussi attractifs au plus près de chez vous.<br>
+            <b>Alors n’hésitez pas, toute l'équipe est à votre service! </b>
+          </p>
+    </div>
+  </section>
+
+</div>
+
+<!-- Message d'alerte -->
+<script>
+alert ("Attention ce site a été réalisé dans le cadre d'un projet d'étude pour le CNAM de Lille")
+</script>

@@ -1,64 +1,60 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <title>{{ brand }}</title>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ brand }}</title>
 
-  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
-  <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
 
-  <link href="/lib/zoombox/zoombox.css" rel="stylesheet" type="text/css" media="screen" />
 
-  <script type="text/javascript" src="/lib/node_modules/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="/lib/zoombox/zoombox.js"></script>
-  <script type="text/javascript">
-  jQuery(function($){
-    $('a.zoombox').zoombox();
-    $('a.zoombox').zoombox({
-      theme : 'zoombox',
-      opacity : 0.6,
-      duration : 600,
-      animation : true,
-      width : 700,
-      height : 500,
-      gallery : false,
-      autoplay : false
-    });
-  });
-  </script>
+    <link href="/lib/zoombox/zoombox.css" rel="stylesheet" type="text/css" media="screen" />
 
-</head>
+    <script type="text/javascript" src="/lib/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/lib/zoombox/zoombox.js"></script>
+    <script type="text/javascript">
+        jQuery(function($){
+            $('a.zoombox').zoombox();
+            $('a.zoombox').zoombox({
+                theme : 'zoombox',
+                opacity : 0.6,
+                duration : 600,
+                animation : true,
+                width : 700,
+                height : 500,
+                gallery : false,
+                autoplay : false
+                });
+        });
+    </script>
+
+  </head>
 
 <body>
 
   <header>
-    {% include 'header.html.twig' %}
+      {% include 'header.html.twig' %}
   </header>
 
   <div id = "corps_page">
-    <section id = "section1">
-      {% include 'menu.html.twig' %}
-    </section>
+      <section id = "section1">
+            {% include 'menu.html.twig' %}
+      </section>
 
-    <section id= "section2">
-      <div id="fil_ariane">
-        <a>Accueil</a>
-        <a>Confort du chantier</a>
-        <span>Chauffage et Climatisation</span>
-      </div>
-      {% if get %}
-        {% include 'products.html.twig' %}
-      {% else %}
-        {% include 'news.html.twig' %}
-      {% endif %}
-    </section>
+      <section id= "section2">
+
+        {% if get %}
+          {% include 'products.html.twig' %}
+        {% else %}
+          {% include 'accueil.html.twig' %}
+        {% endif %}
+      </section>
   </div>
 
   <footer>
-    {% include 'footer.html.twig' %}
+      {% include 'footer.html.twig' %}
   </footer>
-
-</body>
+  </body>
 
 </html>

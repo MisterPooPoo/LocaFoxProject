@@ -5,11 +5,6 @@ html {
     font-size: 1.6vw;
 }
 
-header {
-	position: relative;
-	width: 100%;
-}
-
 header img {
 	width: 100%;
 }
@@ -66,4 +61,18 @@ body h1 {
 
 #corpsinscrire a {
 	font-size: 2vw;
+}
+section {
+	display: flex;
+	flex-direction: row;
+}
+h2 {
+	top: 30%;
+	left: 43%;
+	color: #f06601;
+}
+
+.image_agence {
+	width: 50%;
+	height: 50%;
 }

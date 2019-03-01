@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Nos agences</title>
+
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/carlito" type="text/css"/>
+  <link rel="stylesheet" href="/css/agences.css"/>
+
+  <script language="JavaScript">
+  <script>
+  $( "#bouton_id_frame" ).click(function() {
+    $( "agencyMap0" ).effect( "blind", "slow" );
+  });
+  </script>
+
+</head>
+<body>
+<header>
+  <img src="/images/bannierepopup.png">
+</header>
+
+<h1>Nos Agences</h1>
+<div id="corps">
+{% for key, agency in agencies %}
+<section>
+  <div class="image_prod">
+  <img  src="/images/{{ agency.NomAgence }}.jpg">
+</div>
+  <div class="coord_agence">
+    <span class="nom"> {{ agency.NomAgence }} </span>
+    <div class="adresse">
+      <span> {{ agency.AdAgence }} </span>
+      <span> {{ agency.CPAgence }}</span>
+      <span> {{ agency.VilleAgence}}</span>
+    </div>
+    <div class ="info">
+      <span> Responsable : {{ agency.NomResp }}</span>
+      <span> Tel: {{ agency.TelAgence }}</span>
+      <span> Horaires : Du Lundi au Samedi / {{ agency.HorairesAgence}}</span>
+    </div>
+  </div>
+</section>
+{% endfor %}
+</div>
+
+  </body>
+  </html>

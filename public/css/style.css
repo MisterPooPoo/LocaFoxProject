@@ -195,6 +195,9 @@ footer {
 		 	flex-direction: row;
 		 	width: 40%;
 		 	color: white;
+			padding-top: 0.5%;
+			padding-bottom: 0.5%;
+			margin-left: 3%;
 		 }
 
 		 #footerbar a {
@@ -202,6 +205,9 @@ footer {
 		 	margin-left: 10%;
 		 	text-decoration: none;
 		 	color: white;
+			padding-top:0.5%;
+			padding-bottom:0.5%;
+			width: 30%;
 		 }
 
 /****************** MEDIA QUERIES : AFFICHAGE PETIT ECRAN*******************/

@@ -1,0 +1,53 @@
+#block {
+  display: flex;
+  flex-direction: row;
+  margin-top: 8%;
+
+}
+
+#sectionleft {
+  margin-right: 5%;
+}
+
+#sectionleft img {
+  width: 100%;
+}
+
+.titre {
+  display: flex;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.texte p {
+  text-align: justify;
+  padding-right: 7%;
+}
+
+#sectionright {
+  width: 80%;
+}
+
+.texte span {
+ margin-bottom: 2%;
+}
+
+#basdepage {
+  display: flex;
+  flex-direction: row;
+  padding-left: 1%;
+  margin-top: 1%;
+}
+
+.coordonnees {
+  display: flex;
+  flex-direction: column;
+  font-size: 1em;
+  text-align: center;
+  padding-top: 5%;
+  margin-left: 3%;
+}
+
+#map {
+  margin-left: 18%;
+}
