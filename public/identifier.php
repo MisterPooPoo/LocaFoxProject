@@ -58,19 +58,18 @@ if($_POST) {
     'email' => $formData['email'],
   ]);
 
-  if(!($errors)) {
 
-    if(preg_match("/" . password_hash($formData['password']) . "/","/" . password_hash($userPart['MdpClient'], PASSWORD_BCRYPT) . "/")
-    || preg_match("/" . password_hash($formData['password']) . "/","/" . password_hash($userPro['MdpClient'], PASSWORD_BCRYPT) )) {
+  if(!($errors)) {
+    if(password_verify($formData['password'], $userPart['MdpClient'])) {
       session_start();
-      if($userPart['MdpClient']) {
       $_SESSION['user'] = $userPart;
-      } elseif($userPro['MdpClient']) {
-      $_SESSION['user'] = $userPro;
-      } else {
-      $errors['password'] = 'Email ou mot de passe incorrect';
-      }
       $closeZoombox = true;
+    } elseif (password_verify($formData['password'], $userPro['MdpClient'])) {
+      session_start();
+      $_SESSION['user'] = $userPro;
+      $closeZoombox = true;
+    } else {
+      $errors['password'] = 'Email ou mot de passe incorrect';
     }
 
   }

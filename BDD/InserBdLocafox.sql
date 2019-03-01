@@ -80,14 +80,14 @@ INSERT INTO SousCategorie (NumsousCat, NomsousCat, NumCat)
   ('OU04', 'Peinture', 'OU'),
   ('OU05', 'Finition', 'OU');
 
-INSERT INTO Produit (NumProd, NomProd, PrixHT, Image, NumsousCat)
+INSERT INTO Produit (NumProd, NomProd, PrixHT, NumsousCat)
   VALUES
-  ('CC01-001', 'Climatiseur mobile 40m3', 44.56, '''CC01'),
+  ('CC01-001', 'Climatiseur mobile 40m3', 44.56, 'CC01'),
   ('CC01-002', 'Chauffage fioul 2500m3/h', 76.18, 'CC01'),
   ('CC01-003', 'Chauffage gaz 2500m3/h', 71.86, 'CC01'),
   ('CC01-004', 'Chauffage electrique 550m3/h', 41.63, 'CC01'),
-  ('TE01-001', 'Echafaudage roulant 9m', 66.31, 'TE01'),
-  ('TE01-002', 'Kit échauffade + remorque', 66.31, 'TE01'),
+  ('TE01-001', 'Echaffaudage roulant 9m', 35.31, 'TE01'),
+  ('TE01-002', 'Echaffaudage 2 étages', 66.31, 'TE01'),
   ('TE02-001', 'Nacelle verticale electrique 11m', 140.53, 'TE02'),
   ('TE02-002', 'Nacelle verticale automotrice 6m', 155.77, 'TE02'),
   ('TE02-003', 'Nacelle telescopique diesel 20m', 453.80, 'TE02'),

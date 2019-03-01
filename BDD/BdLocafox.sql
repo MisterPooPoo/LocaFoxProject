@@ -12,7 +12,7 @@ create database BdLocafox;
       CPClient varchar (10) not null,
       TelClient varchar (20) not null,
       MailClient varchar (20) not null,
-      MdpClient varchar (8) not null,
+      MdpClient varchar (60) not null,
       constraint pk_Client primary key (NumClient)
     );
 
@@ -51,10 +51,8 @@ create database BdLocafox;
     ( NumProd varchar (8),
       NomProd varchar (45) not null,
       PrixHT decimal (6,2) not null,
-      Image varchar (45) not null,
       NumsousCat varchar (4),
       constraint pk_Produit primary key (NumProd),
-      constraint ck_QteStock check (QteStock>=0),
       constraint fk_Produit_SousCategorie foreign key (NumsousCat) references SousCategorie (NumSousCat)
     );
 
@@ -67,8 +65,7 @@ create database BdLocafox;
       TelAgence varchar (20) not null,
       HorairesAgence varchar (10) not null,
       NomResp varchar (20) not null,
-      constraint pk_Agence primary key (NumAgence),
-      constraint ck_StockAgence check (StockAgence>=0)
+      constraint pk_Agence primary key (NumAgence)
     );
 
   create table Devis
