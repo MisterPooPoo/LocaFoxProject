@@ -6,7 +6,6 @@ use Doctrine\DBAL\DriverManager;
 require __DIR__.'/../vendor/autoload.php';
 
 $config = new Configuration();
-
 $connectionParams = [
     'driver'    => 'pdo_mysql',
     'host'      => '127.0.0.1',
